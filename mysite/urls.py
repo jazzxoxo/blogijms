@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('blogi/', include('blogi.urls')),
+    path('', include('blogi.urls')),
     path('admin/', admin.site.urls),
 ]
+
+handler404 = 'blogi.views.view_404' 

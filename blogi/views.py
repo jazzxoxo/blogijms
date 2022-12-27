@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.utils import timezone
 from django.views import generic
+from django.shortcuts import redirect
 
 from .models import Post
 
@@ -28,3 +29,6 @@ class DetailView(generic.DetailView):
 def read(request, question_id):
     post = get_object_or_404(Post, pk=question_id)
     return render(request, 'blogi/detail.html')
+
+def view_404(request, exception=None):
+    return redirect('/blogi')
