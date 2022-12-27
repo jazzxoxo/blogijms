@@ -13,7 +13,6 @@ class IndexView(generic.ListView):
     context_object_name = 'latest_post_list'
     pages = 100
 
-
     def get_queryset(self):
         return Post.objects.filter(
             pub_date__lte=timezone.now()
@@ -27,6 +26,21 @@ class DetailView(generic.DetailView):
     def get_queryset(self):
         return Post.objects.filter(pub_date__lte=timezone.now())
 
+class AddView(generic.ListView):
+    model = Post
+    template_name = 'blogi/add_numbers.html'
+
+def add_numbers(request):
+    if request.method == 'POST':
+        try:
+            number1 = request.POST['number1']
+            number2 = request.POST['number2']
+            result = int(number1) + int(number2)
+            return render(request, 'blogi/add_numbers.html', {'number1': number1, 'number2':number2,'result': result})
+        except:
+            return render(request, 'blogi/add_numbers.html', {'number1': "error", 'number2':"error", 'result': "error"})
+    else:
+        return render(request, 'blogi/add_numbers.html')
 
 def read(request, question_id):
     post = get_object_or_404(Post, pk=question_id)

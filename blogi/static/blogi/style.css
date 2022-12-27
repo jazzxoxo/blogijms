@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+.inline {
+    display: inline;
+}
+
 .nd { 
     list-style-type: none;
     margin: 0;
@@ -40,8 +44,17 @@ body {
 header {
     padding: 2%;
     text-align: center;
-    font-size: 15px;
   }
+
+.subheader {
+  padding: 2%;
+  text-align: center;
+  display: inline;
+}
+
+.subheader a {
+    font-size: 1.17em;
+}
 
 footer {
     padding: 2%;
@@ -52,3 +65,61 @@ footer {
 .jaure {
     text-align: center;
 }
+
+* {box-sizing: border-box;}
+/*
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+*/
+
+.form input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  font-family: 'Chivo Mono', monospace;
+}
+
+
+.center {
+  /* width: 300px; 
+  height: 200px;
+  display: flex;  */
+  width: 60%;
+  text-align: center;
+  align-items: center; /* Center the div element vertically within its parent element */
+  justify-items: center;
+  margin: auto;
+  
+}
+
+
+

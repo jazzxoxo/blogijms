@@ -7,8 +7,15 @@
 </head>
 <body>
 <header>
-<h1>Jesseblogi</h1>
+<h1>jesseblogi</h1>
 </header>
+<div class="subheader">
+    <ul class="nd">
+        <li><a href="/add">Arvutama!</a></li>
+    </ul>
+</div>
+
+
 {% if latest_post_list %}
 <div class="clickbait">
     <ul class="nd">
@@ -22,7 +29,7 @@
 {% else %}
 <div class="clickbait">
     <ul class="nd">
-        <p>No posts are available.</p>
+        <p>Hetkel pole postitusi.</p>
     </ul>
 </div>
 {% endif %}
