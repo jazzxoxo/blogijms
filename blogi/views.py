@@ -4,18 +4,20 @@ from django.urls import reverse
 from django.utils import timezone
 from django.views import generic
 from django.shortcuts import redirect
+from django.core.paginator import Paginator
 
 from .models import Post
-
 
 class IndexView(generic.ListView):
     template_name = 'blogi/index.html'
     context_object_name = 'latest_post_list'
+    pages = 100
+
 
     def get_queryset(self):
         return Post.objects.filter(
             pub_date__lte=timezone.now()
-        ).order_by('-pub_date')[:5]
+            ).order_by('-pub_date')[:self.pages]
 
 
 class DetailView(generic.DetailView):

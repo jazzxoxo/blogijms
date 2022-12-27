@@ -1,14 +1,32 @@
-{% load static %}
+<head>
+<!--{% load static %}-->
 
 <link rel="stylesheet" type="text/css" href="{% static 'blogi/style.css' %}">
 
+
+</head>
+<body>
+<header>
+<h1>Jesseblogi</h1>
+</header>
 {% if latest_post_list %}
-    <a>timm</a>
-    <ul>
+<div class="clickbait">
+    <ul class="nd">
     {% for post in latest_post_list %}
         <li><a href="{% url 'blogi:detail' post.id %}">{{ post.title }}</a></li>
     {% endfor %}
+
     </ul>
+</div>
+
 {% else %}
     <p>No posts are available.</p>
 {% endif %}
+
+<footer>
+    <ul class="nd">
+        <li><a href="https://www.linkedin.com/in/mihkel-jesse-27169b199/">LinkedIn</a></li>
+        <li><a href="https://github.com/jazzxoxo">GitHub</a></li>
+    </ul>
+</footer>
+</body>

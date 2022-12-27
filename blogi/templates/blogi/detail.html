@@ -1,7 +1,23 @@
-<h1>{{ post.title }}</h1>
+<head>
+    <!--{% load static %}-->
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'blogi/style.css' %}">
+    
+    
+    </head>
+    <body>
+    <header>
+    <h1>{{ "Jesseblogi #"}}{{post.id}}: {{post.title}}</h1>
+    </header>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <div class="jaure"><p>{{ post.text }}</p></div>
 
-<p>{{ post.text }}</p>
-<!--<input type="submit" value="Vote">-->
-</form>
+    <footer>
+        <ul class="nd">
+            <li><a href="https://www.linkedin.com/in/mihkel-jesse-27169b199/">LinkedIn</a></li>
+            <li><a href="https://github.com/jazzxoxo">GitHub</a></li>
+        </ul>
+    </footer>
+</body>
+
